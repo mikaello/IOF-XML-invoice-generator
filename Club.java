@@ -8,7 +8,7 @@ class Club {
     /** Name of the sports club */
     public final String name;
 
-    /** On optional unique ID for this club */
+    /** An optional unique ID for this club */
     public final int id;
 
     /**
