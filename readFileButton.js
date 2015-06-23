@@ -1,15 +1,42 @@
+function Person(name) {}
+
+
 function myFunction() {
-    var x = document.getElementById("xmlFile");
+    var xmlDoc = getXmlDoc(document.getElementById("xmlFile"));
 
+
+}
+
+function getXmlDoc(file) {
     f = new FileReader();
-    f.onload = function(e) {
-        //console.log(e.target.result);
-
+    f.onload = function(event) {
         var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(e.target.result,"text/xml");
+        var xmlDoc = parser.parseFromString(event.target.result,"text/xml");
 
 	console.log(xmlDoc.documentElement.nodeName);
 	console.log(typeof xmlDoc);
+
+	return xmlDoc;
     };
-    f.readAsText(x.files[0]);
+
+    f.readAsText(file.files[0]);
+}
+
+
+var resultStatus = {
+    OK: "OK",
+    Finished: "Unofficial",
+    MissingPunch: "DSQ",
+    Disqualified: "DSQ",
+    DidNotFinish: "DSQ",
+    Active: "Running",
+    Inactive: "Not yet started",
+    OverTime: "DSQ",
+    SportingWithdrawal: "Sporting withdrawal",
+    NotCompeting: "NC",
+    Moved: "Moved",
+    MovedUp: "Moved up",
+    DidNotStart: "DNS",
+    DidNotEnter: "Did not enter",
+    Cancelled: "Cancelled"
 }
