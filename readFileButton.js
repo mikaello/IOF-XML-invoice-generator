@@ -1,10 +1,30 @@
-function Person(name) {}
+function Club(id, name, address, contact) {
+    this.id = id;
+    this.name = name;
+    this.address = address;
+    this.contact = contact;
+}
+
+function Result(id, time, timeBehind, position, status, runnerClass) {
+    this.id = id;
+    this.time = time;
+    this.timeBehind = timeBehind;
+    this.position = position;
+    this.status = resultStatus[status];
+    this.runnerClass = runnerClass;
+}
+
+function Person(id, firstName, lastName, result, club) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.result = result;
+    this.club = club;
+}
 
 
 function myFunction() {
     var xmlDoc = getXmlDoc(document.getElementById("xmlFile"));
-
-
 }
 
 function getXmlDoc(file) {
