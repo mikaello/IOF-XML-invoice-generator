@@ -5,45 +5,16 @@
     <h3>Hvordan laste opp en XML-fil</h3>
 
     <input type="file" id="xmlFile">
+    Eventor ID: <input type="text" id="eventID">
 
     <p>Last opp en ny IOF XML 3.0-fil</p>
 
     <button onclick="myFunction()">Last opp</button>
+    <button onclick="newEventorEvent()">Les eventor</button>
 
-    <script>
-      function myFunction() {
-      var x = document.getElementById("xmlFile");
-
-      for (var i in x) {
-      console.log(i);
-      }
-      }
-    </script>
-
-    <script>
-      var control = document.getElementById("xmlFile");
-
-      control.addEventListener("change", function(event) {
-
-      // When the control has changed, there are new files
-
-      var i = 0,
-      files = control.files,
-      len = files.length;
-
-      for (; i < len; i++) {
-                 console.log("Filename: " + files[i].name);
-                 console.log("Type: " + files[i].type);
-                 console.log("Size: " + files[i].size + " bytes");
-                 }
-
-		 f = new FileReader();
-f.onload = function(e) {
-		 console.log(e.target.result);
-};
-		 f.readAsText(files[0]);
-                 }, false);
-                 </script>
+    <script src="readEvent.js"></script>
+    <script src="readFileButton.js"></script>
+    <script src="readFile.js"> </script>
 
   </body>
 </html>
